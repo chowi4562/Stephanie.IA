@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta content='width=device-width, initial-scale=1' name='viewport'/>
+  <title><data:view.title.escaped/></title>
+  <b:include data='blog' name='all-head-content'/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>AI Chat</title>
+</head>
+<body>
+  <div class="chat-container" id="chat-container">
+    <!-- Perfil de IA fijo -->
+    <div class="ia-profile">
+      <img src="perfil.png" alt="IA Profile" class="ia-img">
+    </div>
+    
+    <div class="chat" id="chat">
+      <div class="message user">Hello, how can I help you?</div>
+    </div>
+    
+    <div class="input-container">
+      <input type="text" id="user-input" placeholder="Type a message...">
+      <button onclick="sendMessage()">Send</button>
+    </div>
+    
+    <button class="reset-button" onclick="resetChat()">Reset chat</button>
+    
+    <div class="slider-container">
+      <label for="scroll-slider">Adjust:</label>
+      <input type="range" id="scroll-slider" min="1" max="100" value="50" oninput="scrollChat(this.value)">
+    </div>
+    
+    <div class="mode-switch">
+      <label for="dark-mode-switch">Dark Mode</label>
+      <input type="checkbox" id="dark-mode-switch" onclick="toggleDarkMode()">
+    </div>
+
+    <!-- Modo de Expense Manager -->
+    <div class="expense-mode-container">
+      <label for="mode-selector">Mode:</label>
+      <select id="mode-selector" onchange="handleModeChange(this.value)">
+        <option value="normal">Normal</option>
+        <option value="expense-manager">Expense Manager</option>
+        <option value="admin-tiempo">Time Manager</option>
+        <option value="calculadora">Calculator</option>
+        <option value="ordenador">Organizer</option>
+      </select>
+    </div>
+  </div>
+  <script src="script.js"></script>
+  <script src="adminTiempo.js"></script>
+  <script src="calculadora.js"></script>
+  <script src="ordenador.js"></script>
+  <script src="deslizador.js"></script> <!-- Incluyendo el deslizador -->
+</body>
+</html>

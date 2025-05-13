@@ -1,0 +1,147 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease;
+}
+
+.chat-container {
+  width: 100%;
+  height: 100vh;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.ia-profile {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  background-color: #f1f1f1;
+}
+
+.ia-img {
+  width: 100px; /* Tamaño ajustable de la imagen */
+  height: 100px;
+  border-radius: 50%; /* Imagen circular */
+}
+
+.chat {
+  padding: 10px;
+  max-height: calc(100% - 40px);
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  margin: 10px;
+  padding: 10px 15px;
+  border-radius: 20px;
+  position: relative;
+  max-width: 70%;
+  display: inline-block;
+}
+
+.message::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+}
+
+.user {
+  background-color: #4CAF50;
+  color: #fff;
+  text-align: right;
+  align-self: flex-end;
+}
+
+.user::before {
+  border-left-color: #4CAF50;
+  border-right: 0;
+  border-bottom: 0;
+  right: -20px;
+  top: 10px;
+}
+
+.ia {
+  background-color: #008CBA;
+  color: #fff;
+  text-align: left;
+  align-self: flex-start;
+}
+
+.ia::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 10px;
+  height: 10px;
+  background-size: cover;
+  left: -10px;
+  top: 10px;
+}
+
+.input-container {
+  display: flex;
+  padding: 10px;
+  background-color: #f1f1f1;
+}
+
+input {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+button {
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #4CAF50;
+  color: #fff;
+}
+
+.reset-button {
+  align-self: flex-start;
+  margin: 10px;
+}
+
+.mode-switch {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+}
+
+.mode-switch label {
+  margin-right: 10px;
+}
+
+body.dark-mode {
+  background-color: #333;
+  color: #fff;
+}
+
+.dark-mode .chat-container {
+  border-color: #555;
+}
+
+.dark-mode .input-container {
+  background-color: #444;
+}
